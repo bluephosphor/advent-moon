@@ -10,17 +10,24 @@ local function lines_from(file)
     local lines = {}
 
     for line in io.lines(file) do
-        lines[#lines + 1] = tonumber(line)
+        lines[#lines + 1] = line
     end
 
     return lines
 end
 
-local function render_list(list)
+
+local _export = {}
+
+_export.day = function(n)
+    return lines_from('day/' .. tostring(n) .. '.txt')
+end
+
+_export.render = function(list)
     local str = '{'
 
     for i, value in ipairs(list) do
-        str = str .. tostring(value)
+        str = str .. value
         if i ~= #list then
             str = str .. ','
         end
@@ -31,9 +38,4 @@ local function render_list(list)
     return str
 end
 
-return {
-    day = function(day)
-        return lines_from('day/' .. tostring(day) .. '.txt')
-    end,
-    render = render_list
-}
+return _export

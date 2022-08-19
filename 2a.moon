@@ -1,8 +1,7 @@
-import day, render from require 'input'
+import day from require 'input'
 import strsplit from require 'lib'
+
 list = day 2
-
-
 pos = {0, 0}
 
 map = 
@@ -25,5 +24,5 @@ for i, v in ipairs list
     pos = move pos, vec, amt
     print '(' .. pos[1] .. ',' .. pos[2] .. ')'
 
-print 'final position', '(' .. pos[1] .. ',' .. pos[2] .. ')'
-print 'answer:' .. pos[1] * pos[2]
+print 'final position: ' .. '(' .. pos[1] .. ',' .. pos[2] .. ')'
+print 'answer: ' .. pos[1] * pos[2]

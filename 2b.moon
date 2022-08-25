@@ -1,10 +1,10 @@
 import day from require 'input'
 import strsplit from require 'lib'
 
-export list  = day 2
-export hpos  = 0
-export depth = 0
-export aim   = 0
+list  = day 2
+hpos  = 0
+depth = 0
+aim   = 0
 
 read_input = (line) -> 
     local vector

@@ -14,15 +14,15 @@ for line in *list
         else
             info[i][1] += 1
 
-str = ''
+str  = ''
 str2 = ''
 for item in *info
     zeroes  = item[1]
     ones    = item[2]
     result  = zeroes > ones and '1' or '0'
     inverse = result == '0' and '1' or '0'
-    str     = str .. result
-    str2    = str2 .. inverse
+    str   ..= result
+    str2  ..= inverse
     
 gamma   = bin2dec str
 epsilon = bin2dec str2
@@ -31,4 +31,4 @@ print str2
 print gamma
 print epsilon
 
-print 'answer: ', tonumber(gamma) * tonumber(epsilon)
+print 'answer: '..tonumber(gamma) * tonumber(epsilon)
